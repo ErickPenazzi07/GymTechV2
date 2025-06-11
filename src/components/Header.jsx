@@ -1,76 +1,88 @@
-import { Link, NavLink } from "react-router"
-import { useState } from "react"
-
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
-
-
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router";
 
 const Header = () => {
-    const [searchQuery, setSearchQuery] = useState("")
+  const [userEmail, setUserEmail] = useState(null);
+
+  useEffect(() => {
+    // Verifica se o e-mail do usuário está armazenado no localStorage
+    const storedUserEmail = localStorage.getItem("userEmail");
+    if (storedUserEmail) {
+      setUserEmail(storedUserEmail);
+    }
+  }, []);
+
+  const handleLogout = () => {
+    // Remove o e-mail do usuário do localStorage e atualiza o estado
+    localStorage.removeItem("userEmail");
+    setUserEmail(null);
+  };
+
   return (
     <header>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-black p-4">
-      <div className="container">
-        <Link className="navbar-brand fw-bold" to="/">
-          GymTech
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/">
-                Home
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="container">
+          <NavLink to="/" className="navbar-brand">
+            GymTech
+          </NavLink>
+          <div className="collapse navbar-collapse">
+            <form className="d-flex me-auto">
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Buscar"
+              />
+              <button className="btn btn-outline-light" type="submit">
+                Buscar
+              </button>
+            </form>
+            <div className="d-flex">
+              <NavLink to="/carrinho" className="btn btn-outline-light me-2">
+                <i className="bi bi-cart"></i> Carrinho
               </NavLink>
-            </li>
-            <li className="nav-item dropdown">
-
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              </ul>
-            </li>
-            <li className="nav-item">
-            </li>
-          </ul>
-          <form className="d-flex me-3">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Buscar produtos..."
-              aria-label="Search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <button className="btn btn-outline-light" type="submit">
-              Buscar
-            </button>
-          </form>
-          <div className="d-flex">
-            <NavLink to="/carrinho" className="btn btn-outline-light me-2">
-              <i className="bi bi-cart"></i> Carrinho
-            </NavLink>
-            <NavLink to="/login" className="btn btn-outline-light me-2">
-              Login
-            </NavLink>
-            <NavLink to="/registrar" className="btn btn btn-outline-light">
-              Registrar
-            </NavLink>
+              {userEmail ? (
+                <div className="dropdown">
+                  <button
+                    className="btn btn-outline-light dropdown-toggle"
+                    type="button"
+                    id="userDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i className="bi bi-person-circle"></i> {userEmail}
+                  </button>
+                  <ul className="dropdown-menu" aria-labelledby="userDropdown">
+                    <li>
+                      <NavLink to="/perfil" className="dropdown-item">
+                        Meu Perfil
+                      </NavLink>
+                    </li>
+                    <li>
+                      <button
+                        className="dropdown-item"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                <>
+                  <NavLink to="/login" className="btn btn-outline-light me-2">
+                    Login
+                  </NavLink>
+                  <NavLink to="/registrar" className="btn btn-outline-light">
+                    Registrar
+                  </NavLink>
+                </>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
   );
 };
 

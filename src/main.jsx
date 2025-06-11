@@ -13,6 +13,7 @@ import Registrar from './pages/Registrar.jsx';
 import Suplementos from './pages/Suplementos.jsx';
 import Roupas from './pages/Roupas.jsx';
 import Equipamentos from './pages/Equipamentos.jsx';
+import Carrinho from './pages/Carrinho.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/suplementos" element={ <Suplementos />} />
           <Route path="/roupas" element={<Roupas/>} />
           <Route path="/equipamentos" element={<Equipamentos/>} />
+          <Route path="/carrinho" element={<Carrinho />} />
         </Routes>
       </BrowserRouter>
   </StrictMode>,
