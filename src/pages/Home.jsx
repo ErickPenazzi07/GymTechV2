@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Suplemento from "../assets/suplementos.jpg"
 import Roupas from "../assets/roupas.jpg"
 import Equipamentos from "../assets/equipamentos.jpg"
-import GymTech from "../assets/gymtech.jpg"
+
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import Header from "../components/Header"
@@ -29,7 +29,7 @@ export default function Home() {
             </div>
             <div className="col-lg-6">
               <img
-                src={GymTech}
+                src="https://placehold.co/500x300"
                 alt="Produtos de Academia"
                 className="img-thumbnail rounded shadow-lg ImagemBanner"
               />
