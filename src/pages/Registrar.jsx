@@ -20,7 +20,7 @@ const Registrar = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://gymtechv2.somee.com/api/Usuarios/CreateUser", {
+      const response = await fetch("https://gymtechv2.somee.com/api/Usuarios/CreateUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

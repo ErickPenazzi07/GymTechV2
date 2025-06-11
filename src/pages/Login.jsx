@@ -20,7 +20,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        "http://gymtechv2.somee.com/Usuario/login?useCookies=false&useSessionCookies=false",
+        "https://gymtechv2.somee.com/Usuario/login?useCookies=false&useSessionCookies=false",
         {
           method: "POST",
           headers: {
