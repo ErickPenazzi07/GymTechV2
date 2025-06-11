@@ -27,7 +27,7 @@ const clothesProducts = [
   },
   {
     id: 2,
-    name: "Shorts de Treino",
+    name: "Short de Treino",
     price: 89.9,
     oldPrice: 119.9,
     image: "https://placehold.co/300x300",
