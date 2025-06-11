@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 const Header = () => {
   const [userEmail, setUserEmail] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Verifica se o e-mail do usuário está armazenado no localStorage
@@ -16,6 +17,7 @@ const Header = () => {
     // Remove o e-mail do usuário do localStorage e atualiza o estado
     localStorage.removeItem("userEmail");
     setUserEmail(null);
+    navigate("/"); // Redireciona para a tela de Home
   };
 
   return (

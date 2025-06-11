@@ -14,6 +14,7 @@ import Suplementos from './pages/Suplementos.jsx';
 import Roupas from './pages/Roupas.jsx';
 import Equipamentos from './pages/Equipamentos.jsx';
 import Carrinho from './pages/Carrinho.jsx';
+import Perfil from './pages/Perfil.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -26,6 +27,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/roupas" element={<Roupas/>} />
           <Route path="/equipamentos" element={<Equipamentos/>} />
           <Route path="/carrinho" element={<Carrinho />} />
+          <Route path="/perfil" element={<Perfil />} />
         </Routes>
       </BrowserRouter>
   </StrictMode>,

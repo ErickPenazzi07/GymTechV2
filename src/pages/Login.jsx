@@ -35,6 +35,10 @@ const Login = () => {
       );
 
       if (response.ok) {
+        // Salva os dados do usuário no localStorage
+        localStorage.setItem("userEmail", formData.email);
+        localStorage.setItem("userPassword", formData.password);
+
         alert("Login realizado com sucesso!");
         navigate("/"); // Redireciona para a tela de Home
       } else {

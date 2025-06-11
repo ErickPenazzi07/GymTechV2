@@ -34,6 +34,11 @@ const Registrar = () => {
       });
 
       if (response.ok) {
+        // Salva os dados do usuário no localStorage
+        localStorage.setItem("userName", formData.nomeCompleto);
+        localStorage.setItem("userEmail", formData.email);
+        localStorage.setItem("userPassword", formData.password);
+
         alert("Usuário cadastrado com sucesso!");
         navigate("/login"); // Redireciona para a página de login
       } else {
