@@ -10,6 +10,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Login from './pages/Login.jsx';
 import Registrar from './pages/Registrar.jsx';
+import Suplementos from './pages/Suplementos.jsx';
+import Roupas from './pages/Roupas.jsx';
+import Equipamentos from './pages/Equipamentos.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +21,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registrar" element={<Registrar />} />
+          <Route path="/suplementos" element={ <Suplementos />} />
+          <Route path="/roupas" element={<Roupas/>} />
+          <Route path="/equipamentos" element={<Equipamentos/>} />
         </Routes>
       </BrowserRouter>
   </StrictMode>,

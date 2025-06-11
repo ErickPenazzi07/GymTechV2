@@ -32,17 +32,17 @@ const Footer = () => {
             <h5 className="text-uppercase mb-4">Categorias</h5>
             <ul className="list-unstyled">
               <li className="mb-2">
-                <a href="produto" className="text-white text-decoration-none">
+                <a href="roupas" className="text-white text-decoration-none">
                   Roupas Esportivas
                 </a>
               </li>
               <li className="mb-2">
-                <a href="produto" className="text-white text-decoration-none">
+                <a href="suplementos" className="text-white text-decoration-none">
                   Suplementos
                 </a>
               </li>
               <li className="mb-2">
-                <a href="produto" className="text-white text-decoration-none">
+                <a href="equipamentos" className="text-white text-decoration-none">
                   Equipamentos
                 </a>
               </li>

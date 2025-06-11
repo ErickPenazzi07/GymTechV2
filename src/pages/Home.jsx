@@ -15,8 +15,6 @@ export default function Home() {
   return (
     <>
     <Header />
-    <main>
-      {/* Hero Section */}
       <section className="bg-primary text-white py-5">
         <div className="container">
           <div className="row align-items-center">
@@ -102,7 +100,7 @@ export default function Home() {
           <h2 className="text-center mb-5">Nossas Categorias</h2>
           <div className="row">
             <div className="col-lg-4 mb-4">
-              <Link to="/produto" className="text-decoration-none">
+              <Link to="/suplementos" className="text-decoration-none">
                 <div className="card h-100 shadow-sm">
                   <img
                     src={Suplemento}
@@ -117,7 +115,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="col-lg-4 mb-4">
-              <Link to="/produto" className="text-decoration-none">
+              <Link to="/equipamentos" className="text-decoration-none">
                 <div className="card h-100 shadow-sm">
                   <img
                     src={Equipamentos}
@@ -132,7 +130,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="col-lg-4 mb-4">
-              <Link to="/produto" className="text-decoration-none">
+              <Link to="/roupas" className="text-decoration-none">
                 <div className="card h-100 shadow-sm">
                   <img
                     src={Roupas}
@@ -150,7 +148,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
     <Footer />
     </>
   )
